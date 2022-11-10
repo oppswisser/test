@@ -1,0 +1,48 @@
+    local Players = game:GetService("Players")
+local function RemoveSpaces(String)
+    return String:gsub("%s+", "") or String
+end
+
+local function FindPlayer(String)
+    String = RemoveSpaces(String)
+    for _, _Player in pairs(Players:GetPlayers()) do
+        if _Player.Name:lower():match('^'.. String:lower()) then
+            return _Player
+        end
+    end
+    return nil
+end
+
+targetname = game.Players.LocalPlayer.Name
+
+for i=1,1 do
+wait(0.1)
+
+local tbl_main = 
+{
+      "Knockback", 
+      -math.huge / -math.huge,  --50 
+      game:GetService("Workspace")[targetname].Humanoid, 
+      game:GetService("Workspace")[targetname].HumanoidRootPart, 
+      game:GetService("Workspace")[targetname].Effects, 
+      game:GetService("Workspace")[targetname].RightHand, 
+}
+game:GetService("ReplicatedStorage").Events.dmg:FireServer(unpack(tbl_main))
+end
+targetname = game.Players.LocalPlayer.Name
+
+for i=1,1 do
+wait(0.1)
+
+
+local tbl_main = 
+{
+      "Knockback", 
+        -math.huge / -math.huge,  --50 
+      game:GetService("Workspace")[targetname].Humanoid, 
+      game:GetService("Workspace")[targetname].HumanoidRootPart, 
+      game:GetService("Workspace")[targetname].Effects, 
+      game:GetService("Workspace")[targetname].RightHand, 
+}
+game:GetService("ReplicatedStorage").Events.dmg:FireServer(unpack(tbl_main))
+end
